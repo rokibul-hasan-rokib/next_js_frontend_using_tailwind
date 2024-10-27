@@ -13,8 +13,8 @@ const Footer = () => {
                     <div className="mb-4 md:mb-0">
                         <h6 className="text-sm font-semibold">Quick Links</h6>
                         <ul className="space-y-2">
-                            <li><a href="#" className="text-gray-400 hover:text-gray-300">Home</a></li>
-                            <li><a href="#" className="text-gray-400 hover:text-gray-300">About</a></li>
+                            <li><a href="/" className="text-gray-400 hover:text-gray-300">Home</a></li>
+                            <li><a href="/about" className="text-gray-400 hover:text-gray-300">About</a></li>
                             <li><a href="#" className="text-gray-400 hover:text-gray-300">Services</a></li>
                             <li><a href="#" className="text-gray-400 hover:text-gray-300">Contact</a></li>
                         </ul>

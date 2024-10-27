@@ -1,9 +1,11 @@
+import Carousel from "@/components/Header/Carousel";
 
 export default function Home() {
   return (
    <>
      <h1>
-      Hello rokib
+      hlw i am rokib
+      
      </h1>
    </>
   );

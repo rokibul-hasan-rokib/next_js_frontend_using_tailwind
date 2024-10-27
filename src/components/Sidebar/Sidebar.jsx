@@ -8,22 +8,22 @@ const Sidebar = () => {
             <ul className="space-y-2">
                 <li>
                     <Link href="/dashboard">
-                        <span className="block px-4 py-2 hover:bg-gray-700">Dashboard</span>
+                        <span className="block px-4 py-2 hover:bg-blue-950">Dashboard</span>
                     </Link>
                 </li>
                 <li>
-                    <Link href="/dashboard/users">
-                        <span className="block px-4 py-2 hover:bg-gray-700">Users</span>
+                    <Link href="/dashboard/post">
+                        <span className="block px-4 py-2 hover:bg-blue-950">Post</span>
                     </Link>
                 </li>
                 <li>
-                    <Link href="/dashboard/settings">
-                        <span className="block px-4 py-2 hover:bg-gray-700">Settings</span>
+                    <Link href="/dashboard/setting">
+                        <span className="block px-4 py-2 hover:bg-blue-950">Settings</span>
                     </Link>
                 </li>
                 <li>
                     <Link href="/dashboard/reports">
-                        <span className="block px-4 py-2 hover:bg-gray-700">Reports</span>
+                        <span className="block px-4 py-2 hover:bg-blue-950">Reports</span>
                     </Link>
                 </li>
             </ul>
