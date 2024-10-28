@@ -4,7 +4,7 @@ import React from 'react'
 const Sidebar = () => {
   return (
     <div>
-      <nav className="w-64 h-screen py-4 text-white bg-gray-800">
+      <nav className="w-64 h-full max-h-full py-4 text-white bg-gray-800 ">
             <ul className="space-y-2">
                 <li>
                     <Link href="/dashboard">

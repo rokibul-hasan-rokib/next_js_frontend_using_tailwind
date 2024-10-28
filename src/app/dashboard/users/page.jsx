@@ -47,7 +47,7 @@ export default function Page() {
             </tr>
           </thead>
           <tbody className="text-sm font-light text-gray-700">
-            {currentUsers.map((user) => (
+            {currentUsers.map((user) => (  
               <tr key={user.id} className="border-b border-gray-200 hover:bg-gray-100">
                 <td className="px-6 py-3 text-left">{user.id}</td>
                 <td className="px-6 py-3 text-left">{user.name}</td>

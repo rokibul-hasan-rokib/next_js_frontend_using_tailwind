@@ -3,8 +3,9 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import axios from 'axios'; // Import axios
 
-export default function CourierForm() {
+export default function page() {
     const router = useRouter();
     const [courier, setCourier] = useState({
         name: '',
@@ -23,21 +24,30 @@ export default function CourierForm() {
 
     useEffect(() => {
         const fetchDivisions = async () => {
-            const response = await fetch('/api/divisions'); // Adjust this endpoint as necessary
-            const data = await response.json();
-            setDivisions(data);
+            try {
+                const response = await axios.get('/api/divisions'); // Use axios to fetch divisions
+                setDivisions(response.data);
+            } catch (error) {
+                console.error('Error fetching divisions:', error);
+            }
         };
 
         const fetchCities = async () => {
-            const response = await fetch('/api/cities'); // Adjust this endpoint as necessary
-            const data = await response.json();
-            setCities(data);
+            try {
+                const response = await axios.get('/api/cities'); // Use axios to fetch cities
+                setCities(response.data);
+            } catch (error) {
+                console.error('Error fetching cities:', error);
+            }
         };
 
         const fetchZones = async () => {
-            const response = await fetch('/api/zones'); // Adjust this endpoint as necessary
-            const data = await response.json();
-            setZones(data);
+            try {
+                const response = await axios.get('/api/zones'); // Use axios to fetch zones
+                setZones(response.data);
+            } catch (error) {
+                console.error('Error fetching zones:', error);
+            }
         };
 
         fetchDivisions();
@@ -50,14 +60,17 @@ export default function CourierForm() {
         if (id) {
             setEditMode(true);
             const fetchCourier = async () => {
-                const response = await fetch(`/api/couriers?id=${id}`);
-                const data = await response.json();
-                setCourier({
-                    ...data,
-                    division_ids: data.division_ids || [],
-                    city_ids: data.city_ids || [],
-                    zone_ids: data.zone_ids || [],
-                });
+                try {
+                    const response = await axios.get(`/api/couriers?id=${id}`); // Use axios to fetch the courier
+                    setCourier({
+                        ...response.data,
+                        division_ids: response.data.division_ids || [],
+                        city_ids: response.data.city_ids || [],
+                        zone_ids: response.data.zone_ids || [],
+                    });
+                } catch (error) {
+                    console.error('Error fetching courier:', error);
+                }
             };
 
             fetchCourier();
@@ -82,19 +95,21 @@ export default function CourierForm() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const method = editMode ? 'PUT' : 'POST';
-        const response = await fetch('/api/couriers', {
-            method,
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(courier)
-        });
+        try {
+            const response = await axios({
+                method,
+                url: '/api/couriers',
+                data: courier,
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
 
-        if (response.ok) {
-            router.push('/couriers');
-        } else {
-            const error = await response.json();
-            console.error('Error:', error);
+            if (response.status === 200 || response.status === 201) {
+                router.push('/couriers');
+            }
+        } catch (error) {
+            console.error('Error submitting courier:', error);
         }
     };
 
