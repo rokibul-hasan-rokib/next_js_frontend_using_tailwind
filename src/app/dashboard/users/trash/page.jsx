@@ -22,6 +22,15 @@ export default function page() {
     fetchTrashedUsers();
   }, []);
 
+  const restoreUser = async (userId) => {
+    try {
+      await axios.put(`/api/users/restore`, { id: userId }); // Create this API endpoint
+      setTrashedUsers((prev) => prev.filter((user) => user._id !== userId));
+    } catch (error) {
+      console.error("Error restoring user:", error);
+    }
+  };
+
   if (loading) return <p>Loading trashed users...</p>;
 
   return (
@@ -43,10 +52,17 @@ export default function page() {
               <td className="px-6 py-3 text-left">{user.name}</td>
               <td className="px-6 py-3 text-left">{user.email}</td>
               <td className="px-6 py-3 text-left">{new Date(user.deletedAt).toLocaleString()}</td>
+
+            <td className="px-6 py-3 text-left">
+            <button onClick={() => restoreUser(user._id)} className="text-green-600 hover:underline">
+                Restore
+            </button>
+            </td>
             </tr>
           ))}
         </tbody>
       </table>
+      
     </div>
   );
 }
