@@ -22,6 +22,11 @@ const Sidebar = () => {
                     </Link>
                 </li>
                 <li>
+                    <Link href="/dashboard/users">
+                        <span className="block px-4 py-2 hover:bg-blue-950">Users</span>
+                    </Link>
+                </li>
+                <li>
                     <Link href="/dashboard/reports">
                         <span className="block px-4 py-2 hover:bg-blue-950">Reports</span>
                     </Link>
