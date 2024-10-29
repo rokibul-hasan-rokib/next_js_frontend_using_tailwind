@@ -9,7 +9,7 @@ export default function Topbar() {
 
     return (
         <header className="text-white bg-gray-800 shadow ">
-            <div className="flex items-center justify-between w-full py-4 mx-auto">
+            <div className="flex items-center justify-between py-4 mx-auto">
                 <h1 className="text-xl font-semibold">Dashboard</h1>
                 <button
                     onClick={() => router.push('/')} // Redirect to homepage
