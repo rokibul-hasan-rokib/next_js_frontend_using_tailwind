@@ -1,0 +1,83 @@
+body {
+    font-family: "Inter", sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6, p, ul, ol, address {
+    margin: 0;
+    padding: 0;
+  }
+  a{
+    text-decoration: none;
+  }
+  
+  .secondary-button{
+    background-color: $secondary-color;
+    color: $primary-color;
+    border-radius: 8px;
+    padding: 8px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    border: 1px solid $secondary-color;
+    @include transition;
+    &:hover{
+      background-color: transparent;
+      border: 1px solid $secondary-color;
+      color: $secondary-color;
+    }
+  }
+  .primary-button{
+    background-color: $primary-color;
+    color: $default-text-color;
+    border-radius: 8px;
+    padding: 8px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    border: 1px solid transparent;
+    @include transition;
+    &:hover{
+      background-color: transparent;
+      border: 1px solid $primary-color;
+      color: $primary-color;
+    }
+  }
+  
+  .section-gap{
+    margin-top: 140px;
+  }
+  .section-gap-padding{
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  
+  .default-text{
+    color: $default-text-color;
+  }
+  .primary-text{
+    color: $primary-color;
+  }
+  
+  .text-thin{
+    font-weight: 300;
+  }
+  
+  .text-ellipsis{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .paragraph-read-more{
+    &:after{
+      content: ' ... continue reading.';
+      font-weight: 700;
+      color: $primary-color;
+    }
+  }
+  
+  .fixed-menu-gap-recover{
+    margin-top: 85px;
+  }
+  
+  
+  .swiper-pagination-fraction, .swiper-pagination-custom, .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal{
+    bottom: 0 !important;
+  }

@@ -1,0 +1,12 @@
+@mixin section-title {
+    font-size: 36px;
+    color: $primary-color;
+  }
+  
+  @mixin box-shadow {
+    box-shadow: 0 0 12px #dcdcdc;
+  }
+  
+  @mixin transition {
+    transition: all 0.3s ease-in-out;
+  }

@@ -1,0 +1,366 @@
+@import "variables";
+@import "mixins";
+@import "grid";
+@import "common";
+
+
+//top-bar
+
+.top-bar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+  border-bottom: 1px solid white;
+  background-color: $primary-color;
+  padding: 8px 0;
+
+  .nav-item {
+    padding: 0 18px;
+
+  }
+
+  .nav-link {
+    color: $default-text-color;
+    font-size: 18px;
+    @include transition;
+    &:hover{
+      color: $secondary-color;
+    }
+  }
+}
+
+.hero {
+  margin-top: 1px;
+  position: relative;
+  .overly{
+    display: none;
+  }
+  img{
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+    object-position: right;
+  }
+
+  .content {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    color: $default-text-color;
+    width: 40%;
+    text-align: left;
+
+    h1 {
+      font-size: 48px;
+      text-transform: uppercase;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    input {
+      border: 1px solid $default-text-color;
+      border-radius: 16px 0 0 16px;
+      padding: 12px 16px;
+      font-size: 16px;
+      background: transparent;
+
+      &::placeholder {
+        color: $default-text-color;
+      }
+    }
+
+    .input-group-text {
+      color: $primary-color;
+      padding: 0 48px;
+
+    }
+  }
+}
+
+.category-section {
+  background-image: linear-gradient(to bottom, $primary-color-10 50%, $primary-color-05 50%);
+
+  text-align: center;
+
+  .category-circle {
+    background-color: $primary-color;
+    border: 8px solid $default-text-color;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    text-align: center;
+    max-width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+    @include transition;
+    &:hover{
+      transform: scale(1.04);
+    }
+  }
+}
+
+
+.top-reviewed-product {
+  h2 {
+    @include section-title
+  }
+
+  .top-reviewed-card {
+    border: 1px solid $primary-color;
+    border-radius: 8px;
+    text-align: center;
+    padding: 42px 12px;
+    height: 100%;
+    @include transition;
+
+    &:hover {
+      @include box-shadow;
+      transform: scale(1.04);
+    }
+  }
+
+  p {
+    color: $primary-color;
+  }
+}
+
+.our-commitment-to-truth {
+  background-color: $default-body-color;
+
+  h2 {
+    @include section-title
+  }
+
+  .commitment-card {
+    background-color: $primary-color;
+    border-radius: 8px;
+    text-align: center;
+    padding: 42px 12px;
+    color: $default-text-color;
+    @include transition;
+    &:hover{
+      transform: scale(1.04);
+    }
+
+    i {
+      font-size: 60px;
+    }
+
+    h4 {
+      font-size: 28px;
+    }
+
+    p {
+      font-weight: lighter;
+    }
+  }
+}
+
+.recent-reviews {
+  h2 {
+    @include section-title
+  }
+
+  .mySwiper {
+    padding: 8px 8px 42px 8px;
+  }
+
+  .review-card {
+    border-radius: 8px;
+    padding: 42px 24px;
+    @include box-shadow;
+    @include transition;
+    &:hover{
+      transform: scale(1.04);
+    }
+
+    .separator {
+      height: 2px;
+      width: 100%;
+      background-color: $primary-color;
+      margin: 12px 0;
+    }
+
+    .company-name {
+      font-size: 18px;
+    }
+
+    .stars i {
+      border: 1px solid $primary-color;
+      border-radius: 4px;
+      color: $primary-color;
+      padding: 4px;
+      aspect-ratio: 1/1;
+      margin: 0 2px;
+    }
+  }
+}
+
+.sell_authentically {
+  background-color: $primary-color;
+  padding-top: 80px;
+  padding-bottom: 80px;
+
+  h2 {
+    font-size: 36px;
+    color: $secondary-color
+  }
+
+  .authentic-card {
+    background-color: $default-text-color;
+    padding: 42px 12px;
+    border-radius: 8px;
+    text-align: center;
+    @include transition;
+    &:hover{
+      transform: scale(1.04);
+    }
+
+    i {
+      font-size: 64px;
+      background-color: $primary-color;
+      color: $default-text-color;
+      padding: 18px;
+      aspect-ratio: 1/1;
+      border-radius: 8px;
+    }
+
+
+  }
+
+  .get-start-today-title {
+    font-size: 42px;
+  }
+
+  .arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .arrow-line {
+      height: 2px;
+      width: 100%;
+      background-color: $default-text-color;
+    }
+  }
+}
+
+.insights {
+  background-color: $default-body-color;
+
+  h2 {
+    @include section-title
+  }
+
+  .blog-card{
+    border-radius: 8px;
+    @include box-shadow;
+    @include transition;
+    &:hover{
+      transform: scale(1.04);
+    }
+    img{
+      border-radius: 8px 8px 0 0;
+      width: 100%;
+      aspect-ratio: 3/2;
+
+    }
+  }
+}
+
+
+
+.jonjal{
+  background-image: linear-gradient(to bottom, transparent 50%,  $primary-color 50%);
+  .content{
+    background-color: $default-body-color;
+    padding: 56px;
+    border-radius: 12px;
+    h2{
+     color: $primary-color;
+      font-size: 42px;
+      span{
+        color: $secondary-color;
+      }
+    }
+  }
+}
+
+
+
+
+footer {
+  background-color: $primary-color;
+  padding: 72px 0 32px 0;
+
+  .social-media {
+    display: flex;
+    i {
+      color: $primary-color;
+      background-color: $default-text-color;
+      border-radius: 50%;
+      padding: 8px;
+      margin-right: 8px;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+  }
+  h5{
+    color: $default-text-color;
+    text-align: center;
+  }
+  ul{
+    text-align: center;
+    margin-top: 24px;
+
+    li{
+      list-style: none;
+      color: $default-text-color;
+      margin-bottom: 8px;
+      a{
+        color: $default-text-color;
+        @include transition;
+        &:hover{
+          color: $secondary-color;
+        }
+      }
+    }
+  }
+  input {
+    border: 1px solid $default-text-color;
+    border-radius: 16px 0 0 16px;
+    padding: 12px 16px;
+    font-size: 16px;
+    background: transparent;
+
+    &::placeholder {
+      color: $default-text-color;
+    }
+  }
+  .input-group-text{
+    background-color: $secondary-color;
+    color: $primary-color;
+    padding: 0 24px;
+    border: none;
+  }
+  .footer-separator{
+    height: 1px;
+    width: 100%;
+    background-color: $default-text-color;
+    margin: 32px 0;
+  }
+}
+
+
+@import "responsive";
