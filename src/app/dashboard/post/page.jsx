@@ -1,4 +1,4 @@
-"use client"; // Ensures the component is client-side
+"use client"; 
 
 import { useState } from "react";
 
